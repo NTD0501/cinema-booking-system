@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "406036259128",
+    "firebase_url": "https://dashtab-50654-default-rtdb.firebaseio.com",
+    "project_id": "dashtab-50654",
+    "storage_bucket": "dashtab-50654.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:406036259128:android:4c213b490d56f1c5e6e1cd",
+        "android_client_info": {
+          "package_name": "com.example.cinemabookingsystem"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVgpOKC3I6yeONXGFDBDv8k0Es_oN9m_I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
