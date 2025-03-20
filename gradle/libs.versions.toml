@@ -21,6 +21,7 @@ activity = "1.10.1"
 constraintlayout = "2.2.1"
 paypalAndroidSdk = "2.16.0"
 zxingAndroidEmbedded = "4.3.0"
+firebaseFirestore = "25.1.2"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -45,6 +46,7 @@ androidx-constraintlayout = { group = "androidx.constraintlayout", name = "const
 material-dialogs-core = { module = "com.afollestad.material-dialogs:core", version.ref = "coreVersion" }
 paypal-android-sdk = { module = "com.paypal.sdk:paypal-android-sdk", version.ref = "paypalAndroidSdk" }
 zxing-android-embedded = { module = "com.journeyapps:zxing-android-embedded", version.ref = "zxingAndroidEmbedded" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore", version.ref = "firebaseFirestore" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

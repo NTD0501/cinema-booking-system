@@ -27,18 +27,15 @@ class DataStoreManager {
         }
 
         fun setUser(user: User?) {
-            var jsonUser = ""
-            if (user != null) {
-                jsonUser = user.toJSon()
-            }
-            getInstance()!!.sharedPreferences!!.putStringValue(PREF_USER_INFOR, jsonUser)
+            val jsonUser = user?.toJSon() ?: ""
+            getInstance()?.sharedPreferences?.putStringValue(PREF_USER_INFOR, jsonUser)
         }
 
         fun getUser(): User? {
-            val jsonUser = getInstance()!!.sharedPreferences!!.getStringValue(PREF_USER_INFOR)
+            val jsonUser = getInstance()?.sharedPreferences?.getStringValue(PREF_USER_INFOR)
             return if (!isEmpty(jsonUser)) {
                 Gson().fromJson(jsonUser, User::class.java)
-            } else User()
+            } else null
         }
     }
 }

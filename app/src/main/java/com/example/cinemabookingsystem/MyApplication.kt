@@ -36,7 +36,7 @@ class MyApplication : Application() {
     }
 
     companion object {
-        private const val FIREBASE_URL = "https://cinema-c68f6-default-rtdb.firebaseio.com"
+        private const val FIREBASE_URL = "https://dashtab-50654-default-rtdb.firebaseio.com"
         operator fun get(context: Context?): MyApplication {
             return context!!.applicationContext as MyApplication
         }

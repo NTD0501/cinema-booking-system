@@ -13,7 +13,12 @@
           "package_name": "com.example.cinemabookingsystem"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "406036259128-nv6an261nold3b3lq4q9f2767pubf8e6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyAVgpOKC3I6yeONXGFDBDv8k0Es_oN9m_I"
@@ -21,7 +26,12 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "406036259128-nv6an261nold3b3lq4q9f2767pubf8e6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         }
       }
     }
