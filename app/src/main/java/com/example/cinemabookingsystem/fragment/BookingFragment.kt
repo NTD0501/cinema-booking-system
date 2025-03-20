@@ -88,7 +88,7 @@ class BookingFragment : Fragment() {
     }
 
     private fun showDialogConfirmBooking(id: String?) {
-        val dialog = Dialog(activity!!)
+        val dialog = Dialog(requireActivity())
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setContentView(R.layout.layout_dialog_qr_code)
         val window = dialog.window
