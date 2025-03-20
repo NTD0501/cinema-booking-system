@@ -43,6 +43,7 @@ dependencies {
     implementation libs.material
     implementation libs.androidx.activity
     implementation libs.androidx.constraintlayout
+    implementation libs.exoplayer
     implementation platform(libs.firebase.bom)
     implementation libs.glide
     implementation libs.firebase.analytics
@@ -53,7 +54,6 @@ dependencies {
     implementation libs.android.sdk
     implementation libs.paypal.android.sdk
     implementation libs.zxing.android.embedded
-    implementation libs.exoplayer
     implementation libs.circleindicator
     implementation libs.flowlayout
     implementation libs.eventbus
