@@ -1,4 +1,4 @@
-package com.example.cinema.fragment.admin
+package com.example.cinemabookingsystem.fragment.admin
 
 import android.os.Bundle
 import android.text.Editable
@@ -13,18 +13,18 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cinema.MyApplication
-import com.example.cinema.R
-import com.example.cinema.adapter.BookingHistoryAdapter
-import com.example.cinema.adapter.BookingHistoryAdapter.IClickConfirmListener
-import com.example.cinema.constant.GlobalFunction.hideSoftKeyboard
-import com.example.cinema.databinding.FragmentAdminBookingBinding
-import com.example.cinema.event.ResultQrCodeEvent
-import com.example.cinema.listener.IOnSingleClickListener
-import com.example.cinema.model.BookingHistory
-import com.example.cinema.util.DateTimeUtils.convertDateToTimeStamp
-import com.example.cinema.util.DateTimeUtils.getLongCurrentTimeStamp
-import com.example.cinema.util.StringUtil.isEmpty
+import com.example.cinemabookingsystem.MyApplication
+import com.example.cinemabookingsystem.R
+import com.example.cinemabookingsystem.adapter.BookingHistoryAdapter
+import com.example.cinemabookingsystem.adapter.BookingHistoryAdapter.IClickConfirmListener
+import com.example.cinemabookingsystem.constant.GlobalFunction.hideSoftKeyboard
+import com.example.cinemabookingsystem.databinding.FragmentAdminBookingBinding
+import com.example.cinemabookingsystem.event.ResultQrCodeEvent
+import com.example.cinemabookingsystem.listener.IOnSingleClickListener
+import com.example.cinemabookingsystem.model.BookingHistory
+import com.example.cinemabookingsystem.util.DateTimeUtils.convertDateToTimeStamp
+import com.example.cinemabookingsystem.util.DateTimeUtils.getLongCurrentTimeStamp
+import com.example.cinemabookingsystem.util.StringUtil.isEmpty
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener

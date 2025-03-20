@@ -23,7 +23,6 @@ paypalAndroidSdk = "2.16.0"
 zxingAndroidEmbedded = "4.3.0"
 
 [libraries]
-android-sdk = { module = "com.paypal.checkout:android-sdk", version.ref = "androidSdk" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 circleindicator = { module = "me.relex:circleindicator", version.ref = "circleindicator" }
 core = { module = "com.google.zxing:core", version.ref = "core" }

@@ -1,16 +1,16 @@
-package com.example.cinema.fragment.admin
+package com.example.cinemabookingsystem.fragment.admin
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.cinema.activity.ChangePasswordActivity
-import com.example.cinema.activity.SignInActivity
-import com.example.cinema.activity.admin.AdminRevenueActivity
-import com.example.cinema.constant.GlobalFunction.startActivity
-import com.example.cinema.databinding.FragmentAdminManageBinding
-import com.example.cinema.prefs.DataStoreManager
+import com.example.cinemabookingsystem.activity.ChangePasswordActivity
+import com.example.cinemabookingsystem.activity.SignInActivity
+import com.example.cinemabookingsystem.activity.admin.AdminRevenueActivity
+import com.example.cinemabookingsystem.constant.GlobalFunction.startActivity
+import com.example.cinemabookingsystem.databinding.FragmentAdminManageBinding
+import com.example.cinemabookingsystem.prefs.DataStoreManager
 import com.google.firebase.auth.FirebaseAuth
 
 class AdminManageFragment : Fragment() {

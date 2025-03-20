@@ -91,7 +91,7 @@ class MovieDetailActivity : AppCompatActivity() {
         }
         val bundle = Bundle()
         bundle.putSerializable(ConstantKey.KEY_INTENT_MOVIE_OBJECT, mMovie)
-        GlobalFunction.startActivity(this, ConfirmBookingActivity::class, bundle)
+        GlobalFunction.startActivity(this, ConfirmBookingActivity::class.java, bundle)
     }
 
     private fun scrollToLayoutTrailer() {

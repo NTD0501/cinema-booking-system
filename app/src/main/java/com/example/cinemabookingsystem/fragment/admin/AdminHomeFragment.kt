@@ -1,4 +1,4 @@
-package com.example.cinema.fragment.admin
+package com.example.cinemabookingsystem.fragment.admin
 
 import android.app.AlertDialog
 import android.content.DialogInterface
@@ -14,18 +14,18 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.cinema.MyApplication
-import com.example.cinema.R
-import com.example.cinema.activity.admin.AddMovieActivity
-import com.example.cinema.adapter.admin.AdminMovieAdapter
-import com.example.cinema.constant.ConstantKey
-import com.example.cinema.constant.GlobalFunction.getTextSearch
-import com.example.cinema.constant.GlobalFunction.hideSoftKeyboard
-import com.example.cinema.constant.GlobalFunction.startActivity
-import com.example.cinema.databinding.FragmentAdminHomeBinding
-import com.example.cinema.model.Category
-import com.example.cinema.model.Movie
-import com.example.cinema.util.StringUtil.isEmpty
+import com.example.cinemabookingsystem.MyApplication
+import com.example.cinemabookingsystem.R
+import com.example.cinemabookingsystem.activity.admin.AddMovieActivity
+import com.example.cinemabookingsystem.adapter.admin.AdminMovieAdapter
+import com.example.cinemabookingsystem.constant.ConstantKey
+import com.example.cinemabookingsystem.constant.GlobalFunction.getTextSearch
+import com.example.cinemabookingsystem.constant.GlobalFunction.hideSoftKeyboard
+import com.example.cinemabookingsystem.constant.GlobalFunction.startActivity
+import com.example.cinemabookingsystem.databinding.FragmentAdminHomeBinding
+import com.example.cinemabookingsystem.model.Category
+import com.example.cinemabookingsystem.model.Movie
+import com.example.cinemabookingsystem.util.StringUtil.isEmpty
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener

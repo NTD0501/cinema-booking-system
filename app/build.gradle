@@ -36,6 +36,11 @@ android {
     }
 }
 
+configurations {
+    cleanedAnnotations
+    implementation.exclude group: 'org.jetbrains' , module:'annotations'
+}
+
 dependencies {
 
     implementation libs.androidx.core.ktx
@@ -51,7 +56,6 @@ dependencies {
     implementation libs.firebase.auth
     implementation libs.gson
     implementation libs.material.dialogs.core
-    implementation libs.android.sdk
     implementation libs.paypal.android.sdk
     implementation libs.zxing.android.embedded
     implementation libs.circleindicator
