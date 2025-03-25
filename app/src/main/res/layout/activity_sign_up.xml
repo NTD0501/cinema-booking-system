@@ -4,20 +4,23 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <ImageView
-        android:id="@+id/img_back"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/define_dimen_12"
-        android:src="@drawable/ic_back"/>
+
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
+        android:background="@drawable/img"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="@dimen/define_dimen_18">
+
+        <ImageView
+            android:id="@+id/img_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/define_dimen_12"
+            android:src="@drawable/ic_back" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,6 +38,7 @@
             android:hint="@string/hint_email"
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"
+            android:background="@drawable/bg_edittext"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/text_size_small" />
 
@@ -46,28 +50,9 @@
             android:layout_marginTop="@dimen/define_dimen_10"
             android:imeOptions="actionDone"
             android:inputType="textPassword"
+            android:background="@drawable/bg_edittext"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="@dimen/text_size_small" />
-
-        <RadioGroup
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/define_dimen_20"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/rdb_admin"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/admin" />
-
-            <RadioButton
-                android:id="@+id/rdb_user"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/define_dimen_20"
-                android:text="@string/user" />
-        </RadioGroup>
 
         <Button
             android:id="@+id/btn_sign_up"
@@ -101,8 +86,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/define_dimen_6"
-            android:text="@string/sign_in"
-            android:textColor="@color/yellow"
+            android:text="@string/sign_up_user"
+            android:textColor="@color/red"
             android:textSize="@dimen/text_size_small" />
     </LinearLayout>
 </RelativeLayout>

@@ -21,7 +21,6 @@ class SignUpActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         mActivitySignUpBinding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(mActivitySignUpBinding!!.root)
-        mActivitySignUpBinding!!.rdbUser.isChecked = true
         mActivitySignUpBinding!!.imgBack.setOnClickListener { onBackPressed() }
         mActivitySignUpBinding!!.layoutSignIn.setOnClickListener { finish() }
         mActivitySignUpBinding!!.btnSignUp.setOnClickListener { onClickValidateSignUp() }
@@ -37,14 +36,7 @@ class SignUpActivity : BaseActivity() {
         } else if (!StringUtil.isValidEmail(strEmail)) {
             Toast.makeText(this@SignUpActivity, getString(R.string.msg_email_invalid), Toast.LENGTH_SHORT).show()
         } else {
-            if (mActivitySignUpBinding!!.rdbAdmin.isChecked) {
-                if (!strEmail.contains(ConstantKey.ADMIN_EMAIL_FORMAT)) {
-                    Toast.makeText(this@SignUpActivity, getString(R.string.msg_email_invalid_admin), Toast.LENGTH_SHORT).show()
-                } else {
-                    signUpUser(strEmail, strPassword)
-                }
-                return
-            }
+
             if (strEmail.contains(ConstantKey.ADMIN_EMAIL_FORMAT)) {
                 Toast.makeText(this@SignUpActivity, getString(R.string.msg_email_invalid_user), Toast.LENGTH_SHORT).show()
             } else {

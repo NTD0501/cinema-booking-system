@@ -30,13 +30,13 @@
 
     <string name="waiting_message">Vui lòng đợi…</string>
     <string name="sign_up">Đăng Ký</string>
-    <string name="sign_up_user">Đăng Ký Tài Khoản</string>
-    <string name="sign_in_user">Đăng Nhập Tài Khoản</string>
+    <string name="sign_up_user">Đăng nhập</string>
+    <string name="sign_in_user">Đăng Nhập</string>
     <string name="admin">Quản trị viên</string>
     <string name="user">Người dùng</string>
     <string name="have_account">Đã có tài khoản?</string>
     <string name="have_not_account">Chưa có tài khoản?</string>
-    <string name="sign_in">Đăng Nhập</string>
+    <string name="sign_in">Chào mừng bạn quay trở lại</string>
     <string name="forgot_password">Quên mật khẩu</string>
     <string name="change_password">Đổi mật khẩu</string>
     <string name="report">Báo cáo doanh thu</string>

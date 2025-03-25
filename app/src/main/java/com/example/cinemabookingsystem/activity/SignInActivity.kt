@@ -21,7 +21,6 @@ class SignInActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         mActivitySignInBinding = ActivitySignInBinding.inflate(layoutInflater)
         setContentView(mActivitySignInBinding!!.root)
-        mActivitySignInBinding!!.rdbUser.isChecked = true
         mActivitySignInBinding!!.layoutSignUp.setOnClickListener {
             GlobalFunction.startActivity(this@SignInActivity, SignUpActivity::class.java) }
         mActivitySignInBinding!!.btnSignIn.setOnClickListener { onClickValidateSignIn() }
@@ -42,15 +41,6 @@ class SignInActivity : BaseActivity() {
         } else if (!StringUtil.isValidEmail(strEmail)) {
             Toast.makeText(this@SignInActivity, getString(R.string.msg_email_invalid), Toast.LENGTH_SHORT).show()
         } else {
-            if (mActivitySignInBinding!!.rdbAdmin.isChecked) {
-                if (!strEmail.contains(ConstantKey.ADMIN_EMAIL_FORMAT)) {
-                    Toast.makeText(this@SignInActivity,
-                            getString(R.string.msg_email_invalid_admin), Toast.LENGTH_SHORT).show()
-                } else {
-                    signInUser(strEmail, strPassword)
-                }
-                return
-            }
             if (strEmail.contains(ConstantKey.ADMIN_EMAIL_FORMAT)) {
                 Toast.makeText(this@SignInActivity,
                         getString(R.string.msg_email_invalid_user), Toast.LENGTH_SHORT).show()
