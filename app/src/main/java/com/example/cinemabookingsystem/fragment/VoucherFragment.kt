@@ -14,7 +14,7 @@ import com.example.cinemabookingsystem.R
 import com.example.cinemabookingsystem.adapter.BookingHistoryAdapter
 import com.example.cinemabookingsystem.adapter.BookingHistoryAdapter.IClickQRListener
 import com.example.cinemabookingsystem.constant.GlobalFunction.gentQRCodeFromString
-import com.example.cinemabookingsystem.databinding.FragmentBookingBinding
+import com.example.cinemabookingsystem.databinding.FragmentVoucherBinding
 import com.example.cinemabookingsystem.listener.IOnSingleClickListener
 import com.example.cinemabookingsystem.model.BookingHistory
 import com.example.cinemabookingsystem.prefs.DataStoreManager
@@ -25,17 +25,17 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
 import java.util.*
 
-class BookingFragment : Fragment() {
-    private var mFragmentBookingBinding: FragmentBookingBinding? = null
+class VoucherFragment : Fragment() {
+    private var mFragmentVoucherBinding: FragmentVoucherBinding? = null
     private var mListBookingHistory: MutableList<BookingHistory>? = null
     private var mBookingHistoryAdapter: BookingHistoryAdapter? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        mFragmentBookingBinding = FragmentBookingBinding.inflate(inflater, container, false)
+        mFragmentVoucherBinding = FragmentVoucherBinding.inflate(inflater, container, false)
         getListBookingHistory(false)
-        mFragmentBookingBinding!!.chbBookingUsed.setOnCheckedChangeListener { _: CompoundButton?,
+        mFragmentVoucherBinding!!.chbBookingUsed.setOnCheckedChangeListener { _: CompoundButton?,
                                                                               isChecked: Boolean -> getListBookingHistory(isChecked) }
-        return mFragmentBookingBinding!!.root
+        return mFragmentVoucherBinding!!.root
     }
 
     private fun getListBookingHistory(isUsed: Boolean) {
@@ -77,14 +77,14 @@ class BookingFragment : Fragment() {
             return
         }
         val linearLayoutManager = LinearLayoutManager(activity)
-        mFragmentBookingBinding!!.rcvBookingHistory.layoutManager = linearLayoutManager
+        mFragmentVoucherBinding!!.rcvBookingHistory.layoutManager = linearLayoutManager
         mBookingHistoryAdapter = BookingHistoryAdapter(activity, false,
                 mListBookingHistory, object : IClickQRListener {
             override fun onClickOpenQrCode(id: String?) {
                 showDialogConfirmBooking(id)
             }
         }, null)
-        mFragmentBookingBinding!!.rcvBookingHistory.adapter = mBookingHistoryAdapter
+        mFragmentVoucherBinding!!.rcvBookingHistory.adapter = mBookingHistoryAdapter
     }
 
     private fun showDialogConfirmBooking(id: String?) {

@@ -1,9 +1,10 @@
 <resources>
     <string name="app_name">Cinema Manager Kotlin</string>
 
-    <string name="nav_home">Trang chủ</string>
-    <string name="nav_booking">Lịch sử đặt vé</string>
-    <string name="nav_user">Tài khoản</string>
+    <string name="nav_home">Lịch chiếu</string>
+    <string name="nav_voucher">Voucher</string>
+    <string name="nav_promotion">Khuyến mãi</string>
+    <string name="nav_user">Khác</string>
 
     <!--Admin-->
     <string name="nav_admin_category">Thể loại</string>
@@ -108,9 +109,12 @@
     <string name="action_cancel">Hủy</string>
     <string name="action_add">Thêm</string>
     <string name="action_edit">Chỉnh sửa</string>
-
+    <string name="user_icon">User icon</string>
+    <string name="app_logo">App logo</string>
     <string name="msg_confirm_login_another_device">Bạn có chắc chắn muốn thoát ứng dụng?</string>
     <string name="msg_email_require">Vui lòng nhập địa chỉ email</string>
+    <string name="hint_fullname">Họ và tên</string>
+    <string name="msg_fullname_require">Vui lòng nhập họ và tên</string>
     <string name="msg_password_require">Vui lòng nhập mật khẩu</string>
     <string name="msg_old_password_require">Vui lòng nhập mật khẩu cũ</string>
     <string name="msg_new_password_require">Vui lòng nhập mật khẩu mới</string>

@@ -4,8 +4,6 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,10 +29,22 @@
             android:textStyle="bold" />
 
         <EditText
-            android:id="@+id/edt_email"
+            android:id="@+id/edt_fullname"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/define_dimen_20"
+            android:hint="@string/hint_fullname"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName"
+            android:background="@drawable/bg_edittext"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/text_size_small" />
+
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/define_dimen_10"
             android:hint="@string/hint_email"
             android:imeOptions="actionNext"
             android:inputType="textEmailAddress"

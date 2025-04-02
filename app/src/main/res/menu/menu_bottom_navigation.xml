@@ -1,19 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
         android:id="@+id/nav_home"
         android:icon="@drawable/ic_nav_home"
-        android:title="@string/nav_home" />
+        android:title="@string/nav_home"
+        app:showAsAction="ifRoom|withText" />
 
     <item
-        android:id="@+id/nav_booking"
+        android:id="@+id/nav_voucher"
         android:icon="@drawable/ic_nav_booking"
-        android:title="@string/nav_booking" />
+        android:title="@string/nav_voucher"
+        app:showAsAction="ifRoom|withText" />
+
+    <item
+        android:id="@+id/nav_promotion"
+        android:icon="@drawable/ic_nav_booking"
+        android:title="@string/nav_promotion"
+        app:showAsAction="ifRoom|withText" />
 
     <item
         android:id="@+id/nav_user"
         android:icon="@drawable/ic_nav_user"
-        android:title="@string/nav_user" />
+        android:title="@string/nav_user"
+        app:showAsAction="ifRoom|withText" />
 
 </menu>

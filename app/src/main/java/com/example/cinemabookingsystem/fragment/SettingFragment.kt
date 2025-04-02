@@ -12,7 +12,7 @@ import com.example.cinemabookingsystem.databinding.FragmentAccountBinding
 import com.example.cinemabookingsystem.prefs.DataStoreManager
 import com.google.firebase.auth.FirebaseAuth
 
-class AccountFragment : Fragment() {
+class SettingFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         val fragmentAccountBinding = FragmentAccountBinding.inflate(inflater, container, false)

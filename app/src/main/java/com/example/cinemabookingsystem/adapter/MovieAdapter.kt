@@ -21,8 +21,8 @@ class MovieAdapter(private val mListMovies: List<Movie>?,
     override fun onBindViewHolder(holder: MovieViewHolder, position: Int) {
         val movie = mListMovies!![position]
         GlideUtils.loadUrl(movie.image, holder.mItemMovieBinding.imgMovie)
+        holder.mItemMovieBinding.tvDate.text = movie.date
         holder.mItemMovieBinding.tvName.text = movie.name
-        holder.mItemMovieBinding.tvBooked.text = movie.booked.toString()
         holder.mItemMovieBinding.layoutItem.setOnClickListener { iManagerMovieListener.clickItemMovie(movie) }
     }
 

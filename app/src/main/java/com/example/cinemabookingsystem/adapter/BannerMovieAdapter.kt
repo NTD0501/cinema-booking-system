@@ -22,8 +22,6 @@ class BannerMovieAdapter(private val mListMovies: List<Movie>?,
     override fun onBindViewHolder(holder: BannerMovieViewHolder, position: Int) {
         val movie = mListMovies!![position]
         GlideUtils.loadUrlBanner(movie.imageBanner, holder.mItemBannerMovieBinding.imgBanner)
-        holder.mItemBannerMovieBinding.tvTitle.text = movie.name
-        holder.mItemBannerMovieBinding.tvBooked.text = movie.booked.toString()
         holder.mItemBannerMovieBinding.layoutItem.setOnClickListener { iClickItemListener.onClickItem(movie) }
     }
 

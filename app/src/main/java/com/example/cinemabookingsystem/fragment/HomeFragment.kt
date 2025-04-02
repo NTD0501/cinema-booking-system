@@ -8,20 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.cinemabookingsystem.prefs.DataStoreManager
 import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.example.cinemabookingsystem.MyApplication
-import com.example.cinemabookingsystem.activity.CategoryActivity
-import com.example.cinemabookingsystem.activity.SearchActivity
 import com.example.cinemabookingsystem.adapter.BannerMovieAdapter
 import com.example.cinemabookingsystem.adapter.BannerMovieAdapter.IClickItemListener
-import com.example.cinemabookingsystem.adapter.CategoryAdapter
 import com.example.cinemabookingsystem.adapter.MovieAdapter
-import com.example.cinemabookingsystem.constant.ConstantKey
 import com.example.cinemabookingsystem.constant.GlobalFunction.goToMovieDetail
-import com.example.cinemabookingsystem.constant.GlobalFunction.startActivity
 import com.example.cinemabookingsystem.databinding.FragmentHomeBinding
-import com.example.cinemabookingsystem.model.Category
 import com.example.cinemabookingsystem.model.Movie
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
@@ -32,7 +26,6 @@ class HomeFragment : Fragment() {
     private var mFragmentHomeBinding: FragmentHomeBinding? = null
     private var mListMovies: MutableList<Movie>? = null
     private var mListMoviesBanner: MutableList<Movie>? = null
-    private var mListCategory: MutableList<Category>? = null
     private val mHandlerBanner = Handler(Looper.getMainLooper())
     private val mRunnableBanner = Runnable {
         if (mListMoviesBanner == null || mListMoviesBanner!!.isEmpty()) {
@@ -48,14 +41,10 @@ class HomeFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
         mFragmentHomeBinding = FragmentHomeBinding.inflate(inflater, container, false)
         getListMovies()
-        getListCategory()
-        initListener()
+        displayAccountInformation()
         return mFragmentHomeBinding!!.root
     }
 
-    private fun initListener() {
-        mFragmentHomeBinding!!.layoutSearch.setOnClickListener { startActivity(activity, SearchActivity::class.java) }
-    }
 
     private fun getListMovies() {
         if (activity == null) {
@@ -80,6 +69,23 @@ class HomeFragment : Fragment() {
 
             override fun onCancelled(error: DatabaseError) {}
         })
+    }
+
+    private fun displayAccountInformation() {
+        val currentUser = DataStoreManager.getUser()
+
+        if (currentUser != null) {
+            mFragmentHomeBinding?.tvUserName?.text =
+                ("Xin chào " + currentUser.fullname) ?: currentUser.email
+
+            val userRole = if (currentUser.isAdmin) "Admin" else "Member"
+            mFragmentHomeBinding?.tvUserRole?.text = userRole
+        }
+
+        mFragmentHomeBinding?.imgUser?.setOnClickListener {
+            // Chuyển đến màn hình thông tin tài khoản hoặc màn hình profile
+            // Ví dụ: GlobalFunction.startActivity(requireActivity(), ProfileActivity::class.java)
+        }
     }
 
     private fun displayListBannerMovies() {
@@ -129,43 +135,6 @@ class HomeFragment : Fragment() {
         mFragmentHomeBinding!!.rcvMovie.adapter = movieAdapter
     }
 
-    private fun getListCategory() {
-        if (activity == null) {
-            return
-        }
-        MyApplication[activity].getCategoryDatabaseReference().addValueEventListener(object : ValueEventListener {
-            override fun onDataChange(snapshot: DataSnapshot) {
-                if (mListCategory != null) {
-                    mListCategory!!.clear()
-                } else {
-                    mListCategory = ArrayList()
-                }
-                for (dataSnapshot in snapshot.children) {
-                    val category = dataSnapshot.getValue(Category::class.java)
-                    if (category != null) {
-                        mListCategory!!.add(0, category)
-                    }
-                }
-                displayListCategories()
-            }
-
-            override fun onCancelled(error: DatabaseError) {}
-        })
-    }
-
-    private fun displayListCategories() {
-        val linearLayoutManager = LinearLayoutManager(activity,
-                LinearLayoutManager.HORIZONTAL, false)
-        mFragmentHomeBinding!!.rcvCategory.layoutManager = linearLayoutManager
-        val categoryAdapter = CategoryAdapter(mListCategory, object : CategoryAdapter.IManagerCategoryListener {
-            override fun clickItemCategory(category: Category?) {
-                val bundle = Bundle()
-                bundle.putSerializable(ConstantKey.KEY_INTENT_CATEGORY_OBJECT, category)
-                startActivity(activity, CategoryActivity::class.java, bundle)
-            }
-        })
-        mFragmentHomeBinding!!.rcvCategory.adapter = categoryAdapter
-    }
 
     companion object {
         private const val MAX_BANNER_SIZE = 3

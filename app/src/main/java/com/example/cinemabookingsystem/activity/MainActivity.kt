@@ -24,15 +24,15 @@ class MainActivity : BaseActivity() {
                 when (position) {
                     0 -> {
                         activityMainBinding.bottomNavigation.menu.findItem(R.id.nav_home).isChecked = true
-                        activityMainBinding.tvTitle.text = getString(R.string.nav_home)
                     }
                     1 -> {
-                        activityMainBinding.bottomNavigation.menu.findItem(R.id.nav_booking).isChecked = true
-                        activityMainBinding.tvTitle.text = getString(R.string.nav_booking)
+                        activityMainBinding.bottomNavigation.menu.findItem(R.id.nav_voucher).isChecked = true
                     }
                     2 -> {
+                        activityMainBinding.bottomNavigation.menu.findItem(R.id.nav_promotion).isChecked = true
+                    }
+                    3 -> {
                         activityMainBinding.bottomNavigation.menu.findItem(R.id.nav_user).isChecked = true
-                        activityMainBinding.tvTitle.text = getString(R.string.nav_user)
                     }
                 }
             }
@@ -41,13 +41,13 @@ class MainActivity : BaseActivity() {
             val id = item.itemId
             if (id == R.id.nav_home) {
                 activityMainBinding.viewpager2.currentItem = 0
-                activityMainBinding.tvTitle.text = getString(R.string.nav_home)
-            } else if (id == R.id.nav_booking) {
+            } else if (id == R.id.nav_voucher) {
                 activityMainBinding.viewpager2.currentItem = 1
-                activityMainBinding.tvTitle.text = getString(R.string.nav_booking)
-            } else if (id == R.id.nav_user) {
+            }
+            else if (id == R.id.nav_promotion) {
                 activityMainBinding.viewpager2.currentItem = 2
-                activityMainBinding.tvTitle.text = getString(R.string.nav_user)
+            } else if (id == R.id.nav_user) {
+                activityMainBinding.viewpager2.currentItem = 3
             }
             true
         }
